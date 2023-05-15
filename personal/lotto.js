@@ -85,23 +85,23 @@ function lotto() {
         const num_ball = document.getElementById(`num${i}`)
         num_ball.setAttribute('class', 'mybtn')
         if (select_nums[i] >= 1 && select_nums[i] <= 10) {
-            num_ball.setAttribute('style', "font-size: xx-large;")
+            num_ball.setAttribute('style', "font-size: large;")
             num_ball.setAttribute('class', "ball y1")
         }
         else if (select_nums[i] >= 11 && select_nums[i] <= 20) {
-            num_ball.setAttribute('style', "font-size: xx-large;")
+            num_ball.setAttribute('style', "font-size: large;")
             num_ball.setAttribute('class', "ball b1")
         }
         else if (select_nums[i] >= 21 && select_nums[i] <= 30) {
-            num_ball.setAttribute('style', "font-size: xx-large;")
+            num_ball.setAttribute('style', "font-size: large;")
             num_ball.setAttribute('class', "ball r1")
         }
         else if (select_nums[i] >= 31 && select_nums[i] <= 40) {
-            num_ball.setAttribute('style', "font-size: xx-large;")
+            num_ball.setAttribute('style', "font-size: large;")
             num_ball.setAttribute('class', "ball k1")
         }
         else if (select_nums[i] >= 41 && select_nums[i] <= 45) {
-            num_ball.setAttribute('style', "font-size: xx-large;")
+            num_ball.setAttribute('style', "font-size: large;")
             num_ball.setAttribute('class', "ball g1")
         }
         num_ball.innerText = select_nums[i]
