@@ -20,28 +20,66 @@
         }
 
         #lottoResults {
+            justify-content: center;
+            align-items: center;
+        }
+
+        .mysimul {
+            color: antiquewhite;
             display: flex;
             justify-content: center;
             align-items: center;
+        }
+
+        .myresult {
+            color: antiquewhite;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .ball {
+            display: flex;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            margin: 0 10px;
+            color: antiquewhite;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .b1 {
+            background-color: rgb(28, 28, 255);
+            box-shadow: inset -25px -15px 40px rgba(0, 0, 0, .3);
+            background-image: linear-gradient(-45deg, rgba(255, 255, 220, .3) 0%, transparent 100%);
         }
         
-        .mybtn {
-            color: antiquewhite;
-            background-color: black;
-            border-radius: 50%;
-            width: 70px;
-            height: 50px;
-            margin: 0 10px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border: 1px solid black;
+        .y1 {
+            background-color: rgb(240, 205, 1);
+            box-shadow: inset -25px -15px 40px rgba(0, 0, 0, .3);
+            background-image: linear-gradient(-45deg, rgba(255, 255, 220, .3) 0%, transparent 100%);
         }
+        .g1 {
+            background-color: rgb(16, 191, 0);
+            box-shadow: inset -25px -15px 40px rgba(0, 0, 0, .3);
+            background-image: linear-gradient(-45deg, rgba(255, 255, 220, .3) 0%, transparent 100%);
+        }
+        .r1 {
+            background-color: rgb(255, 28, 28);
+            box-shadow: inset -25px -15px 40px rgba(0, 0, 0, .3);
+            background-image: linear-gradient(-45deg, rgba(255, 255, 220, .3) 0%, transparent 100%);
+        }
+        .k1 {
+            background-color: rgb(110, 110, 114);
+            box-shadow: inset -25px -15px 40px rgba(0, 0, 0, .3);
+            background-image: linear-gradient(-45deg, rgba(255, 255, 220, .3) 0%, transparent 100%);
+        }
+
     </style>
 </head>
 
 <body>
-    <div class="container text-center mt-5" style="width: 50%;">
+    <div class="container text-center mt-5" style="width: 800px;">
         <h1 style="color: antiquewhite;">당첨될 수 있을까..?</h1>
         <div class="input-group mb-3 mt-5">
             <input type="number" class="form-control" placeholder="로또 시뮬레이션 회수" aria-label="로또 시뮬레이션 회수"
@@ -49,15 +87,67 @@
             <button style="color: antiquewhite;" class="btn btn-success" type="button" onclick="lotto()">시뮬레이션
                 시작</button>
         </div>
-        <div id="lottoResults">
-            <div class="mybtn">1</div>
-            <div class="mybtn">11</div>
-            <div class="mybtn">22</div>
-            <div class="mybtn">33</div>
-            <div class="mybtn">44</div>
-            <div class="mybtn">55</div>
-            <div class="mybtn">+</div>
-            <div class="mybtn">6</div>
+        <hr class="mb-5">
+    </div>
+
+
+    <h3 id="count" class="mysimul"></h3>
+    <div class="container text-center mt-5">
+        <table style="margin: 0 auto;">
+            <tbody style="width: 800px;">
+
+
+
+
+                <!-- <td>
+                    <div class="ball b1" style="font-size: xx-large;">1</div>
+                </td>
+                <td>
+                    <div class="ball y1" style="font-size: xx-large;">45</div>
+                </td>
+                <td>
+                    <div class="ball r1" style="font-size: xx-large;">42</div>
+                </td>
+                <td>
+                    <div class="ball k1" style="font-size: xx-large;">11</div>
+                </td>
+                <td>
+                    <div class="ball g1" style="font-size: xx-large;">22</div>
+                </td>
+                <td>
+                    <div class="ball" style="background-color: gray; font-size: xx-large;">33</div>
+                </td> -->
+
+
+                <td>
+                    <div id="num0" class="ball"></div>
+                </td>
+                <td>
+                    <div id="num1" class="ball"></div>
+                </td>
+                <td>
+                    <div id="num2" class="ball"></div>
+                </td>
+                <td>
+                    <div id="num3" class="ball"></div>
+                </td>
+                <td>
+                    <div id="num4" class="ball"></div>
+                </td>
+                <td>
+                    <div id="num5" class="ball"></div>
+                </td>
+                </tr>
+            </tbody>
+        </table>
+        <hr class="mb-5">
+        <div id="resultStr" class="myresult">
+            <h3 id="result0"></h3>
+            <h3 id="result1"></h3>
+            <h3 id="result2"></h3>
+            <h3 id="result3"></h3>
+            <h3 id="result4"></h3>
+            <h3 id="result5"></h3>
         </div>
     </div>
 </body>

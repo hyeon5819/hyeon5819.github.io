@@ -1,9 +1,12 @@
 function lotto() {
-
-
     const lottoSimulations = document.getElementById("lottoSimulations")
-    const want_cnt = lottoSimulations.value
-
+    let want_cnt = lottoSimulations.value
+    if (want_cnt == 0) {
+        want_cnt = 1
+    }
+    console.log(want_cnt)
+    const simulationsCount = document.getElementById('count')
+    simulationsCount.innerText = want_cnt +"회 시뮬레이션 결과!"
 
     // 숫자 리스트
     let num_list = Array.from(Array(45), (_, i) => i + 1);
@@ -59,14 +62,50 @@ function lotto() {
     console.log(count + '회차까지 실행 완료');
 
     // 결과값 보고
+    const resultStr = document.getElementById('resultStr')
+    let inum = 0 
     for (let xx of most6) {
+        const resltStrlist = document.getElementById(`result${inum}`)
         select_nums.push(xx[0]);
         console.log(`번호: ${xx[0]}, 나온 횟수: ${xx[1]}`);
+        resltStrlist.innerText = `번호: ${xx[0]}, 나온 횟수: ${xx[1]}`
+        resultStr.appendChild(resltStrlist)
+        inum += 1
     }
 
     // 보기좋게 선택번호 나열
-    select_nums.sort();
+    select_nums.sort(function (a, b) {
+        if (a > b) return 1;
+        if (a === b) return 0;
+        if (a < b) return -1;
+    });
     console.log(select_nums);
+
+    for (let i = 0; i < select_nums.length; i++) {
+        const num_ball = document.getElementById(`num${i}`)
+        num_ball.setAttribute('class', 'mybtn')
+        if (select_nums[i] >= 1 && select_nums[i] <= 10) {
+            num_ball.setAttribute('style', "font-size: xx-large;")
+            num_ball.setAttribute('class', "ball y1")
+        }
+        else if (select_nums[i] >= 11 && select_nums[i] <= 20) {
+            num_ball.setAttribute('style', "font-size: xx-large;")
+            num_ball.setAttribute('class', "ball b1")
+        }
+        else if (select_nums[i] >= 21 && select_nums[i] <= 30) {
+            num_ball.setAttribute('style', "font-size: xx-large;")
+            num_ball.setAttribute('class', "ball r1")
+        }
+        else if (select_nums[i] >= 31 && select_nums[i] <= 40) {
+            num_ball.setAttribute('style', "font-size: xx-large;")
+            num_ball.setAttribute('class', "ball k1")
+        }
+        else if (select_nums[i] >= 41 && select_nums[i] <= 45) {
+            num_ball.setAttribute('style', "font-size: xx-large;")
+            num_ball.setAttribute('class', "ball g1")
+        }
+        num_ball.innerText = select_nums[i]
+    };
 }
 
 // 원하는 회차 입력 기능 알림형
@@ -74,5 +113,5 @@ function lotto() {
 // lotto(want_cnt);
 
 window.onload = () => {
-    console.log('z')
+    console.log('로또 시뮬레이션')
 }
